@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title> PER final practice advanced level </title></head>
+
+  <body style="background-color:aqua">
+  <h1 align='center'><font Face="arial" SIZE="6"><b>PER final practice advanced level. </b></font></h1>
+
+
+
+
+<br><br>
+  <h2>PER final practice</h2>
+  <p><font SIZE="4">This practice is done in all its level(basic, medium and advanced) and  contains the following Endpoints: listSpecies, karyotype, chromosomeLength, geneSeq, geneInfo, geneCal, geneList and all this Endpoints with a json option to transform it into json</font></p>
+  <br>
+  <br>
+  <p><b>List Species &rarr; if you leave the blank empty it shows all the species in the database, if you put a number wil show until that number.</b></p>
+    <form action="/listSpecies" method="get">
+        Please introduce a number of how many species u want, if you want to see all do not type the blank space:
+        <input type="text" size="6" name="limit" >
+        <input type="submit"  value="Send">
+        <br><br>
+        JSON:
+        <input type="checkbox" name="json" value="1"><br>
+    </form>
+
+
+
+    <br><br>
+  <p><b> Karyotype &rarr;Show the karyotype of a determinated specie that is in the database.</b></p>
+    <form action="/karyotype" method="get">
+        Please introduce the specie,which is in the database, that you want to know his karyotype:
+        <input type="text" size="20" name="specie" >
+        <input type="submit"  value="Click">
+        <br><br>
+        JSON:
+        <input type="checkbox" name="json" value="1"> <br>
+    </form>
+  <br>
+  <br><br>
+  <form action="/chromosomeLength" method="get">
+      <b>Chromosome length &rarr; Determinates the length of a chromosome form a specie that is in the data base.</b>
+            <br><br>
+                    Specie that you want to know the chromosome length:
+        <input type="text" size="20" name="specie" >
+            <br><br>
+            Number of chromosome of the specie that you want to know his length:
+        <input type="text" size="3" name="chromo">
+            <br><br>
+        <input type="submit"  value="Click only if you have filled each blank">
+      <br><br>
+        JSON:
+        <input type="checkbox" name="json" value="1"><br>
+      <br><br>
+    </form>
+
+
+
+  <br><br>
+  <form action="/geneSeq" method="get">
+      <b>Gene seq &rarr;Allow to know the nucleotid sequence of a determinated human gene</b>
+            <br><br>
+      Put and human gene that you would like to know his nucleotid sequence:
+        <input type="text" size="20" name="gene" >
+        <input type="submit"  value="Make sure that the gene is written correctly ">
+  <br><br>
+        JSON:
+        <input type="checkbox" name="json" value="1"><br>
+  </form>
+  <br><br>
+
+
+
+  <br><br>
+  <form action="/geneInfo" method="get">
+      <b>Gene info &rarr; Allow us to know the information(start,end,id and chromosome) of a determinated human gen</b>
+            <br><br>
+      Put and human gene that you would like to know his basic information:
+        <input type="text" size="20" name="gene" >
+        <input type="submit"  value="Make sure that the gene is written correctly ">
+    <br><br>
+        JSON:
+        <input type="checkbox" name="json" value="1"><br>
+  </form>
+  <br>
+
+
+  <br><br>
+  <form action="/geneCalc" method="get">
+      <b>Gene calc &rarr; Calculate the total length of a human gene and make the percetange of bases that are in that human gen</b>
+            <br><br>
+      Put and human gene that you would like to know his length and percentage of bases:
+        <input type="text" size="20" name="gene" >
+        <input type="submit"  value="Make sure that the gene is written correctly ">
+    <br><br>
+        JSON:
+        <input type="checkbox" name="json" value="1"><br>
+  </form>
+
+
+  <br>
+  <br><br>
+<form action="/geneList" method="get">
+      <b>Gene list &rarr; Allow us to know the gens that are situated in a part of a determinated human  chromosome</b>
+            <br><br>
+      Put an human chromosome that you would like to know the genes that it contains:
+        <input type="text" size="20" name="chromo" >
+    <br><br>
+    Start of the chromosome part:
+        <input type="text" size="20" name="start" >
+    <br><br>
+    End of the chromosome part:
+    <input type="text" size="20" name="end" >
+    <br><br>
+    JSON:
+        <input type="checkbox" name="json" value="1"><br>
+    <br><br>
+        <input type="submit"  value="Click here ">
+
+  </form>
+  </body>
+</html>

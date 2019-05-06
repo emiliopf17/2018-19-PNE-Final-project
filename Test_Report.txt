@@ -1,0 +1,1188 @@
+
+Url to connect to html file: http://localhost:8000/
+Answer:
+        <html dir="ltr" lang="en"><head>
+            <meta charset="utf-8">
+            <title> PER final practice advanced level </title></head>
+
+          <body style="background-color:aqua">
+          <h1 align="center"><font size="6" face="arial"><b>PER final practice advanced level. </b></font></h1>
+
+
+
+
+        <br><br>
+          <h2>PER final practice</h2>
+          <p><font size="4">This practice is done in all its level(basic, medium and advanced) and  contains the following Endpoints: listSpecies, karyotype, chromosomeLength, geneSeq, geneInfo, geneCal, geneList and all this Endpoints with a json option to transform it into json</font></p>
+          <br>
+          <br>
+          <p><b>List Species → if you leave the blank empty it shows all the species in the database, if you put a number wil show until that number.</b></p>
+            <form action="/listSpecies" method="get">
+                Please introduce a number of how many species u want, if you want to see all do not type the blank space:
+                <input type="text" size="6" name="limit">
+                <input type="submit" value="Send">
+                <br><br>
+                JSON:
+                <input type="checkbox" name="json" value="1"><br>
+            </form>
+
+
+
+            <br><br>
+          <p><b> Karyotype →Show the karyotype of a determinated specie that is in the database.</b></p>
+            <form action="/karyotype" method="get">
+                Please introduce the specie,which is in the database, that you want to know his karyotype:
+                <input type="text" size="20" name="specie">
+                <input type="submit" value="Click">
+                <br><br>
+                JSON:
+                <input type="checkbox" name="json" value="1"> <br>
+            </form>
+          <br>
+          <br><br>
+          <form action="/chromosomeLength" method="get">
+              <b>Chromosome length → Determinates the length of a chromosome form a specie that is in the data base.</b>
+                    <br><br>
+                            Specie that you want to know the chromosome length:
+                <input type="text" size="20" name="specie">
+                    <br><br>
+                    Number of chromosome of the specie that you want to know his length:
+                <input type="text" size="3" name="chromo">
+                    <br><br>
+                <input type="submit" value="Click only if you have filled each blank">
+              <br><br>
+                JSON:
+                <input type="checkbox" name="json" value="1"><br>
+              <br><br>
+            </form>
+
+
+
+          <br><br>
+          <form action="/geneSeq" method="get">
+              <b>Gene seq →Allow to know the nucleotid sequence of a determinated human gene</b>
+                    <br><br>
+              Put and human gene that you would like to know his nucleotid sequence:
+                <input type="text" size="20" name="gene">
+                <input type="submit" value="Make sure that the gene is written correctly ">
+          <br><br>
+                JSON:
+                <input type="checkbox" name="json" value="1"><br>
+          </form>
+          <br><br>
+
+
+
+          <br><br>
+          <form action="/geneInfo" method="get">
+              <b>Gene info → Allow us to know the information(start,end,id and chromosome) of a determinated human gen</b>
+                    <br><br>
+              Put and human gene that you would like to know his basic information:
+                <input type="text" size="20" name="gene">
+                <input type="submit" value="Make sure that the gene is written correctly ">
+            <br><br>
+                JSON:
+                <input type="checkbox" name="json" value="1"><br>
+          </form>
+          <br>
+
+
+          <br><br>
+          <form action="/geneCal" method="get">
+              <b>Gene cal → Calculate the total length of a human gene and make the percetange of bases that are in that human gen</b>
+                    <br><br>
+              Put and human gene that you would like to know his length and percentage of bases:
+                <input type="text" size="20" name="gene">
+                <input type="submit" value="Make sure that the gene is written correctly ">
+            <br><br>
+                JSON:
+                <input type="checkbox" name="json" value="1"><br>
+          </form>
+
+
+          <br>
+          <br><br>
+        <form action="/geneList" method="get">
+              <b>Gene list → Allow us to know the gens that are situated in a part of a determinated human  chromosome</b>
+                    <br><br>
+              Put an human chromosome that you would like to know the genes that it contains:
+                <input type="text" size="20" name="chromo">
+            <br><br>
+            Start of the chromosome part:
+                <input type="text" size="20" name="start">
+            <br><br>
+            End of the chromosome part:
+            <input type="text" size="20" name="end">
+            <br><br>
+            JSON:
+                <input type="checkbox" name="json" value="1"><br>
+            <br><br>
+                <input type="submit" value="Click here ">
+
+          </form>
+
+        </body></html>
+
+
+
+
+Basic Level:
+
+    /listSpecies:
+        Without limit:
+            URL resquested: http://localhost:8000/listSpecies?limit=
+            Answer:
+                    <html><head></head><body style="background-color:mediumaquamarine">
+                                               <ol><li>Flycatcher</li>
+                                               </ol>
+
+
+                                               <li>American beaver</li>
+
+
+
+                                               <li>C.intestinalis</li>
+
+
+
+                                               <li>Central bearded dragon</li>
+
+
+
+                                               <li>Golden-collared manakin</li>
+
+
+
+                                               <li>Steppe mouse</li>
+
+
+
+                                               <li>White-throated sparrow</li>
+
+
+
+                                               <li>Kangaroo rat</li>
+
+
+
+                                               <li>Gibbon</li>
+
+
+
+                                               <li>Mouse FVB/NJ</li>
+
+
+
+                                               <li>Mummichog</li>
+
+
+
+                                               <li>Algerian mouse</li>
+
+
+
+                                               <li>Guppy</li>
+
+
+
+                                               <li>Clown anemonefish</li>
+
+
+
+                                               <li>Mongolian gerbil</li>
+
+
+
+                                               <li>Saccharomyces cerevisiae</li>
+
+
+
+                                               <li>Paramormyrops kingsleyae</li>
+
+
+
+                                               <li>Lesser Egyptian jerboa</li>
+
+
+
+                                               <li>Mouse C3H/HeJ</li>
+
+
+
+                                               <li>Orange clownfish</li>
+
+
+
+                                               <li>Hedgehog</li>
+
+
+
+                                               <li>Koala</li>
+
+
+
+                                               <li>Spiny chromis</li>
+
+
+
+                                               <li>Blue-crowned manakin</li>
+
+
+
+                                               <li>American mink</li>
+
+
+
+                                               <li>Guinea Pig</li>
+
+
+
+                                               <li>Horse</li>
+
+
+
+                                               <li>Armadillo</li>
+
+
+
+                                               <li>Burton's mouthbrooder</li>
+
+
+
+                                               <li>Crab-eating macaque</li>
+
+
+
+                                               <li>Japanese quail</li>
+
+
+
+                                               <li>Budgerigar</li>
+
+
+
+                                               <li>Naked mole-rat male</li>
+
+
+
+                                               <li>Ma's night monkey</li>
+
+
+
+                                               <li>Polar bear</li>
+
+
+
+                                               <li>Greater bamboo lemur</li>
+
+
+
+                                               <li>Sailfin molly</li>
+
+
+
+                                               <li>Mangrove rivulus</li>
+
+
+
+                                               <li>Great spotted kiwi</li>
+
+
+
+                                               <li>Argentine black and white tegu</li>
+
+
+
+                                               <li>Coquerel's sifaka</li>
+
+
+
+                                               <li>Donkey</li>
+
+
+
+                                               <li>Brazilian guinea pig</li>
+
+
+
+                                               <li>Duck</li>
+
+
+
+                                               <li>Zebrafish</li>
+
+
+
+                                               <li>Northern American deer mouse</li>
+
+
+
+                                               <li>Common canary</li>
+
+
+
+                                               <li>Golden Hamster</li>
+
+
+
+                                               <li>Channel catfish</li>
+
+
+
+                                               <li>Western mosquitofish</li>
+
+
+
+                                               <li>Swamp eel</li>
+
+
+
+                                               <li>Bengalese finch</li>
+
+
+
+                                               <li>Cat</li>
+
+
+
+                                               <li>Platypus</li>
+
+
+
+                                               <li>Little spotted kiwi</li>
+
+
+
+                                               <li>Tuatara</li>
+
+
+
+                                               <li>Shortfin molly</li>
+
+
+
+                                               <li>Drosophila melanogaster</li>
+
+
+
+                                               <li>Tasmanian devil</li>
+
+
+
+                                               <li>Zebra mbuna</li>
+
+
+
+                                               <li>Mouse WSB/EiJ</li>
+
+
+
+                                               <li>Ballan wrasse</li>
+
+
+
+                                               <li>Great Tit</li>
+
+
+
+                                               <li>Helmeted guineafowl</li>
+
+
+
+                                               <li>Lamprey</li>
+
+
+
+                                               <li>Spotted gar</li>
+
+
+
+                                               <li>Monterrey platyfish</li>
+
+
+
+                                               <li>Upper Galilee mountains blind mole rat</li>
+
+
+
+                                               <li>Pika</li>
+
+
+
+                                               <li>Sloth</li>
+
+
+
+                                               <li>Chimpanzee</li>
+
+
+
+                                               <li>Bolivian squirrel monkey</li>
+
+
+
+                                               <li>Ferret</li>
+
+
+
+                                               <li>Agassiz's desert tortoise</li>
+
+
+
+                                               <li>Arctic ground squirrel</li>
+
+
+
+                                               <li>Mouse PWK/PhJ</li>
+
+
+
+                                               <li>Japanese medaka HdrR</li>
+
+
+
+                                               <li>Megabat</li>
+
+
+
+                                               <li>Abingdon island giant tortoise</li>
+
+
+
+                                               <li>Black snub-nosed monkey</li>
+
+
+
+                                               <li>Mexican tetra</li>
+
+
+
+                                               <li>Lyretail cichlid</li>
+
+
+
+                                               <li>Mouse CAST/EiJ</li>
+
+
+
+                                               <li>Lesser hedgehog tenrec</li>
+
+
+
+                                               <li>Zebra Finch</li>
+
+
+
+                                               <li>Elephant</li>
+
+
+
+                                               <li>Capuchin</li>
+
+
+
+                                               <li>Anole lizard</li>
+
+
+
+                                               <li>Panda</li>
+
+
+
+                                               <li>Daurian ground squirrel</li>
+
+
+
+                                               <li>Pig</li>
+
+
+
+                                               <li>Mouse</li>
+
+
+
+                                               <li>Mouse NZO/HlLtJ</li>
+
+
+
+                                               <li>Spoon-billed sandpiper</li>
+
+
+
+                                               <li>Wallaby</li>
+
+
+
+                                               <li>Tiger tail seahorse</li>
+
+
+
+                                               <li>Cow</li>
+
+
+
+                                               <li>American bison</li>
+
+
+
+                                               <li>Mouse A/J</li>
+
+
+
+                                               <li>Japanese medaka HSOK</li>
+
+
+
+                                               <li>Bonobo</li>
+
+
+
+                                               <li>Gorilla</li>
+
+
+
+                                               <li>Emu</li>
+
+
+
+                                               <li>Okarito brown kiwi</li>
+
+
+
+                                               <li>Dog</li>
+
+
+
+                                               <li>Chilean tinamou</li>
+
+
+
+                                               <li>Sheepshead minnow</li>
+
+
+
+                                               <li>Chinese hamster PICR</li>
+
+
+
+                                               <li>Alpaca</li>
+
+
+
+                                               <li>Blue tit</li>
+
+
+
+                                               <li>Zig-zag eel</li>
+
+
+
+                                               <li>Pig-tailed macaque</li>
+
+
+
+                                               <li>Ryukyu mouse</li>
+
+
+
+                                               <li>Angola colobus</li>
+
+
+
+                                               <li>Sheep</li>
+
+
+
+                                               <li>Drill</li>
+
+
+
+                                               <li>Eastern happy</li>
+
+
+
+                                               <li>Japanese medaka HNI</li>
+
+
+
+                                               <li>Cod</li>
+
+
+
+                                               <li>Hagfish</li>
+
+
+
+                                               <li>Tarsier</li>
+
+
+
+                                               <li>Indian medaka</li>
+
+
+
+                                               <li>Sooty mangabey</li>
+
+
+
+                                               <li>Stickleback</li>
+
+
+
+                                               <li>Amazon molly</li>
+
+
+
+                                               <li>Mouse DBA/2J</li>
+
+
+
+                                               <li>Mouse C57BL/6NJ</li>
+
+
+
+                                               <li>Dark-eyed junco</li>
+
+
+
+                                               <li>Chinese hamster CHOK1GS</li>
+
+
+
+                                               <li>Xenopus</li>
+
+
+
+                                               <li>Dingo</li>
+
+
+
+                                               <li>Dolphin</li>
+
+
+
+                                               <li>Ugandan red Colobus</li>
+
+
+
+                                               <li>Red-bellied piranha</li>
+
+
+
+                                               <li>Mouse Lemur</li>
+
+
+
+                                               <li>Midas cichlid</li>
+
+
+
+                                               <li>Caenorhabditis elegans</li>
+
+
+
+                                               <li>Tetraodon</li>
+
+
+
+                                               <li>Makobe Island cichlid</li>
+
+
+
+                                               <li>Platyfish</li>
+
+
+
+                                               <li>Shrew mouse</li>
+
+
+
+                                               <li>Chinese hamster CriGri</li>
+
+
+
+                                               <li>Long-tailed chinchilla</li>
+
+
+
+                                               <li>Hyrax</li>
+
+
+
+                                               <li>Mouse BALB/cJ</li>
+
+
+
+                                               <li>Naked mole-rat female</li>
+
+
+
+                                               <li>Ruff</li>
+
+
+
+                                               <li>Vervet-AGM</li>
+
+
+
+                                               <li>Goat</li>
+
+
+
+                                               <li>Bushbaby</li>
+
+
+
+                                               <li>Coelacanth</li>
+
+
+
+                                               <li>Pink-footed goose</li>
+
+
+
+                                               <li>Macaque</li>
+
+
+
+                                               <li>Marmoset</li>
+
+
+
+                                               <li>Turbot</li>
+
+
+
+                                               <li>Periophthalmus magnuspinnatus</li>
+
+
+
+                                               <li>Chinese softshell turtle</li>
+
+
+
+                                               <li>Leopard</li>
+
+
+
+                                               <li>Degu</li>
+
+
+
+                                               <li>Climbing perch</li>
+
+
+
+                                               <li>Tongue sole</li>
+
+
+
+                                               <li>Mainland tiger snake</li>
+
+
+
+                                               <li>Mouse CBA/J</li>
+
+
+
+                                               <li>Tilapia</li>
+
+
+
+                                               <li>Gelada</li>
+
+
+
+                                               <li>Prairie vole</li>
+
+
+
+                                               <li>Fugu</li>
+
+
+
+                                               <li>Australian saltwater crocodile</li>
+
+
+
+                                               <li>Rabbit</li>
+
+
+
+                                               <li>Wild yak</li>
+
+
+
+                                               <li>Red fox</li>
+
+
+
+                                               <li>Bicolor damselfish</li>
+
+
+
+                                               <li>Shrew</li>
+
+
+
+                                               <li>Mouse AKR/J</li>
+
+
+
+                                               <li>Greater amberjack</li>
+
+
+
+                                               <li>Chicken</li>
+
+
+
+                                               <li>Mouse NOD/ShiLtJ</li>
+
+
+
+                                               <li>Painted turtle</li>
+
+
+
+                                               <li>Olive baboon</li>
+
+
+
+                                               <li>Alpine marmot</li>
+
+
+
+                                               <li>Orangutan</li>
+
+
+
+                                               <li>Asian bonytongue</li>
+
+
+
+                                               <li>Squirrel</li>
+
+
+
+                                               <li>C.savignyi</li>
+
+
+
+                                               <li>Golden snub-nosed monkey</li>
+
+
+
+                                               <li>Northern pike</li>
+
+
+
+                                               <li>Turkey</li>
+
+
+
+                                               <li>Mouse LP/J</li>
+
+
+
+                                               <li>Damara mole rat</li>
+
+
+
+                                               <li>Tiger</li>
+
+
+
+                                               <li>Yellowtail amberjack</li>
+
+
+
+                                               <li>Ocean sunfish</li>
+
+
+
+                                               <li>American black bear</li>
+
+
+
+                                               <li>Tree Shrew</li>
+
+
+
+                                               <li>Opossum</li>
+
+
+
+                                               <li>Rat</li>
+
+
+
+                                               <li>Mouse 129S1/SvImJ</li>
+
+
+
+                                               <li>Human</li>
+
+
+
+                                               <li>Microbat</li>
+
+
+
+                                               </body></html>
+
+
+
+        With limit:
+            URL resqueted:  http://localhost:8000/listSpecies?limit=10
+            Answer:
+                    <html><head></head><body style="background-color:mediumaquamarine">
+                                               <ol><li>Mouse</li>
+                                               </ol>
+
+
+                                               <li>Human</li>
+
+
+
+                                               <li>Guinea Pig</li>
+
+
+
+                                               <li>Mouse CBA/J</li>
+
+
+
+                                               <li>Midas cichlid</li>
+
+
+
+                                               <li>Anole lizard</li>
+
+
+
+                                               <li>Capuchin</li>
+
+
+
+                                               <li>Ballan wrasse</li>
+
+
+
+                                               <li>Leopard</li>
+
+
+
+                                               <li>Fugu</li></body></html>
+
+
+
+
+    /karyotype:
+            URL resquested: http://localhost:8000/karyotype?specie=mouse
+            Answer:
+                    <html><head></head><body style="background-color:mediumaquamarine">
+                                                               <ul><li>1</li>
+
+                                                           </ul>
+
+                                                           <li>2</li>
+
+
+
+                                                           <li>3</li>
+
+
+
+                                                           <li>4</li>
+
+
+
+                                                           <li>5</li>
+
+
+
+                                                           <li>6</li>
+
+
+
+                                                           <li>7</li>
+
+
+
+                                                           <li>8</li>
+
+
+
+                                                           <li>9</li>
+
+
+
+                                                           <li>10</li>
+
+
+
+                                                           <li>11</li>
+
+
+
+                                                           <li>12</li>
+
+
+
+                                                           <li>13</li>
+
+
+
+                                                           <li>14</li>
+
+
+
+                                                           <li>15</li>
+
+
+
+                                                           <li>16</li>
+
+
+
+                                                           <li>17</li>
+
+
+
+                                                           <li>18</li>
+
+
+
+                                                           <li>19</li>
+
+
+
+                                                           <li>X</li>
+
+
+
+                                                           <li>Y</li>
+
+
+
+                                                           <li>MT</li>
+
+
+
+                                                           </body></html>
+
+
+
+    /chromosomeLength:
+            URL resquested: http://localhost:8000/chromosomeLength?specie=mouse&chromo=18
+            Answer:
+                    <li>90702639</li>
+
+
+
+
+
+Medium level:
+
+    /geneSeq:
+         URL requested: http://localhost:8000/geneSeq?gene=FRAT1
+         Answer:
+                <li>ATTCCGGCTCCCGCGGCTGCAGGCGCGCGGCTAGAGTGCCTGGCGGGCTCCGGCTTCCGCGTCCGCCCCGGCCCCGGTCCAGACTTAGTCTTCAGCTCCGCGCCCGCTCCGCCGCGGCCCACCGCGCCCGCCGGCAGCCGAGCCCCCAGCGACGCCCGCACAGCTCCGGGTGCCCAGACAGGGGGCCATGCCGTGCCGGAGGGAGGAGGAAGAGGAAGCCGGCGAGGAGGCGGAGGGGGAGGAAGAGGAGGAGGACAGCTTCCTCCTACTGCAGCAGTCAGTGGCGCTGGGCAGCTCGGGCGAGGTGGACCGGCTGGTGGCCCAGATCGGCGAGACGCTGCAGCTGGACGCGGCGCAGCACAGCCCGGCCTCGCCGTGCGGGCCCCCGGGGGCGCCGCTGCGGGCCCCGGGGCCCCTGGCTGCGGCGGTGCCGGCGGACAAGGCCAGGTCCCCGGCGGTGCCGCTGCTGCTGCCGCCCGCGTTGGCGGAGACTGTGGGCCCGGCGCCCCCTGGGGTCCTGCGCTGCGCCCTGGGGGACCGCGGCCGCGTGCGGGGCCGCGCTGCGCCCTACTGCGTGGCCGAGCTCGCCACAGGCCCCAGCGCGCTGTCCCCACTGCCCCCTCAGGCCGACCTTGATGGGCCTCCGGGAGCTGGCAAGCAGGGCATCCCGCAGCCGCTGTCGGGTCCGTGCCGGCGAGGATGGCTCCGGGGCGCCGCCGCCTCCCGCCGCCTGCAGCAGCGACGCGGGTCCCAACCAGAAACCCGCACAGGCGACGACGACCCGCACCGGCTTCTGCAGCAGCTAGTGCTCTCTGGAAACCTCATCAAGGAGGCCGTGCGAAGGCTTCATTCGCGACGGCTGCAGTTACGTGCAAAGCTTCCCCAACGCCCGCTCCTGGGACCTCTGTCGGCCCCGGTGCATGAACCCCCTTCGCCTCGCAGCCCTCGCGCGGCCTGCAGTGACCCTGGCGCCTCCGGGAGGGCGCAGCTCAGAACTGGCGACGGCGTTCTTGTGCCTGGCAGCTAACACGCCCGGGGTGGCCACAGCGCCAGCCTCAGACTGGAGGGCAAGGGGTTCCCTTGAGGGCTGCAGTTCTACTCAGGCTGGTGGAGAACTCTGGCTTTTGGAAGCGAGAGTAAAAAGCTAATGACGAGGAACCGAAAAATCGCGAGTGTTTCGCGGGTAACTGGGGTTGAGGGCCAAAATATTTGGAATGAAGGACTTTGGCCCTATTTAAGGCAGATTTTACAGAGCGCACCTCAAACGTACAAGTCAGTAGGACTCCTTATTTGGCGTGACCCGACCTGGCCGCGGAGCCTGCATTTCCTCGCAGCCTCTCAGTGCCCTCCAGCCCCGCGACCATGTGGCCACAATCCACGCTTCTCCGGATCGCGGTGCGCCGGAACCACGGAGGATGATGCCAGTTACTTGCTTTACCTTTTCAGGGCTGGCTCCTGATCCACTTTGGGGGAGGAGAACATGAGTAGATAATTTCAGGGTGCAGCCCAATCTGCCAGACTTAAAAAAACCATCTTGTGTCTTTGGAGGTGCTGCTTAATACCAAACATGCGGTGCCATGAAGGGACCCTTTGGGGGTTGAATAGGAGTTAACCCCTGCGCTCTCTTTGCAACTGTCTCTCTTCTCAGAGTGGTGGGGGAAGGCTGTACGACACGGGTGGGGAAAGGAGGTGGGGGCGGGGAGTATTGAATGGTGGTGGAAGGGTAGAGAGGCGCGGAGTGAACCCCACGCCCTGTCTAAAGTGTATTTTCAGAGCCGGCCCGCCTCTCCTCGGTTCAAGGTCACTGTTTCCTGGGCACGCACTGGGTTGCGGGACAGAGTAGCCAGGTTCTGCCGGTGCTCGGAGAAGAGCGCAGTGTTTTGCAAGTGCTGGAGTCTCCTGAGGACACGCGCGTCGCCGCCACCGCGGGTGTGGGAAAGCGCGGACGTGCTGGGCGGCTGTGCTTCGGTAGGCGACCACCGCCCCTGGCCGCGCTCCGGGCTTTCACGGAAACTCCCGAGACCGGGCCCTGGGTTCCTCCTCTCCTACTCGGCTCTGCAGTCCTACTCAAGCGGGTGGCTCTGGGATCCTGGGGGCCTGGGTTGGGGGCTAGGGAGACGCCATGTGATGGACACTCCAGGGACACACAGCCTAGCACAGCAGCTTATAATGGGCTCTCCGGGGCCATTTGCAATAACAGCTGCAATTCCCTGGATAGACGAGTTGATTTCCTCCCTCTGCCCCTCCCCCAGCCATGCCAGCTGGCCTTTGTAAGTGCAGGAAACCGAGTAGAAAATGTGACCCTCCAAATGGAGAAGCTGCAGGCTTTGCCATTGTGAACCATGGTGAAGTGCTTGGAACATACTGTTCACTCACTCTAAAGGCGCTGAGACTGTGCTGTTGTTCTCGTTTTTATAGTCAATGGCTTGTTCATCATCCAGATGTGGCTACTGACATATCTACACTTCGCACCGGAGTGTCTGGAATTGTGGCTATCCTGATTATAGGATTTTAACTTAACTGAAATGCCTGCTTTGAATAAATGTGTTGGGTTTTTTGTTTGGTTTTATTTTATACTTGCCATCAGTGAAAAAGATGTACAGAACACATTTCTCTGATCTCCATAAACATGAAAACACTTGAAATCTC
+
+
+
+    /geneInfo:
+        URL requested: http://localhost:8000/geneInfo?gene=FRAT1
+        Answer:
+                <html><head></head><body style="background-color:mediumaquamarine;">
+                                            <ul><font>ID: ENSG00000165879</font></ul>
+                                            <ul><font>Start: 97319267</font></ul>
+                                            <ul><font>End: 97321915</font></ul>
+                                            <ul><font>Lenght: 2648</font></ul>
+                                            <ul><font>Chromosome: 10</font></ul>
+
+
+                                                                        </body></html>
+
+
+
+    /geneCal:
+        URL requested: http://localhost:8000/geneCal?gene=FRAT1
+        Answer:
+                <html><head></head><body style="background-color:mediumaquamarine;">
+                                                        <ul><font>Total length of the Gene: 2649</font></ul>
+                                                        <ul><font>Perc of A: 18.0%</font></ul>
+                                                        <ul><font>Perc of C: 30.2%</font></ul>
+                                                        <ul><font>Perc of G: 32.0%</font></ul>
+                                                        <ul><font>Perc of T: 19.7%</font></ul>
+
+                                                        </body></html>
+
+
+    /geneList:
+        URL requested: http://localhost:8000/geneList?chromo=1&start=0&end=30000
+        Answer:
+                <html><head></head><body style="background-color:mediumaquamarine">
+                                                                               <ul>
+                                                                                <li>DDX11L1 11869 14409</li></ul><li>WASH7P 14404 29570</li><li>MIR6859-1 17369 17436</li><li>MIR1302-2HG 29554 31109</li></body></html>
+
+
+
+Advanced Level:
+
+    /listSpecies:
+            Without limit:
+                URL requested: http://localhost:8000/listSpecies?limit=&json=1
+                Answer:
+
+
+
+
+            With limit:
+                Url requested: http://localhost:8000/listSpecies?limit=10&json=1
+                Answer:
+
+
+
+
+    /karyotype:
+            URL resquested: http://localhost:8000/karyotype?specie=mouse&json=1
+            Answer:
+                    <pre class="data">["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "X", "Y", "MT"]</pre>
+
+
+    /chromosomelength:
+            URL resquested: http://localhost:8000/chromosomeLength?specie=mouse&chromo=18&json=1
+            Answer:
+                    [{"coord_system": "scaffold", "name": "GL456350.1", "length": 227966}, {"coord_system": "scaffold", "name": "GL456219.1", "length": 175968}, {"coord_system": "scaffold", "length": 953012, "name": "JH584299.1"}, {"length": 169725, "name": "GL456210.1", "coord_system": "scaffold"}, {"coord_system": "scaffold", "name": "JH584298.1", "length": 184189}, {"coord_system": "scaffold", "name": "GL456221.1", "length": 206961}, {"length": 241735, "name": "GL456211.1", "coord_system": "scaffold"}, {"coord_system": "scaffold", "name": "GL456354.1", "length": 195993}, {"length": 182347, "name": "JH584300.1", "coord_system": "scaffold"}, {"coord_system": "scaffold", "name": "JH584301.1", "length": 259875}, {"length": 114452, "name": "JH584304.1", "coord_system": "scaffold"}, {"name": "JH584296.1", "length": 199368, "coord_system": "scaffold"}, {"coord_system": "scaffold", "name": "JH584297.1", "length": 205776}, {"length": 153618, "name": "GL456212.1", "coord_system": "scaffold"}, {"name": "GL456213.1", "length": 39340, "coord_system": "scaffold"}, {"coord_system": "scaffold", "length": 155838, "name": "JH584302.1"}, {"coord_system": "scaffold", "name": "JH584303.1", "length": 158099}, {"length": 336933, "name": "GL456233.1", "coord_system": "scaffold"}, {"length": 25871, "name": "GL456381.1", "coord_system": "scaffold"}, {"length": 42057, "name": "GL456367.1", "coord_system": "scaffold"}, {"name": "GL456393.1", "length": 55711, "coord_system": "scaffold"}, {"name": "GL456383.1", "length": 38659, "coord_system": "scaffold"}, {"coord_system": "scaffold", "length": 24668, "name": "GL456390.1"}, {"coord_system": "scaffold", "name": "GL456387.1", "length": 24685}, {"coord_system": "scaffold", "length": 23629, "name": "GL456392.1"}, {"coord_system": "scaffold", "name": "GL456372.1", "length": 28664}, {"name": "GL456378.1", "length": 31602, "coord_system": "scaffold"}, {"length": 72385, "name": "GL456379.1", "coord_system": "scaffold"}, {"coord_system": "scaffold", "name": "GL456389.1", "length": 28772}, {"name": "GL456394.1", "length": 24323, "coord_system": "scaffold"}, {"coord_system": "scaffold", "name": "GL456366.1", "length": 47073}, {"name": "GL456382.1", "length": 23158, "coord_system": "scaffold"}, {"coord_system": "scaffold", "length": 31704, "name": "GL456360.1"}, {"length": 66673, "name": "GL456216.1", "coord_system": "scaffold"}, {"name": "GL456370.1", "length": 26764, "coord_system": "scaffold"}, {"coord_system": "scaffold", "name": "GL456396.1", "length": 21240}, {"name": "JH584295.1", "length": 1976, "coord_system": "scaffold"}, {"name": "GL456385.1", "length": 35240, "coord_system": "scaffold"}, {"coord_system": "scaffold", "length": 14945, "name": "JH584292.1"}, {"name": "GL456368.1", "length": 20208, "coord_system": "scaffold"}, {"name": "GL456359.1", "length": 22974, "coord_system": "scaffold"}, {"coord_system": "scaffold", "name": "GL456239.1", "length": 40056}, {"length": 207968, "name": "JH584293.1", "coord_system": "scaffold"}, {"coord_system": "scaffold", "length": 191905, "name": "JH584294.1"}, {"coord_system": "chromosome", "name": "X", "length": 171031299}, {"length": 90702639, "name": "18", "coord_system": "chromosome"}, {"coord_system": "chromosome", "name": "6", "length": 149736546}, {"name": "7", "length": 145441459, "coord_system": "chromosome"}, {"coord_system": "chromosome", "length": 151834684, "name": "5"}, {"length": 195471971, "name": "1", "coord_system": "chromosome"}, {"coord_system": "chromosome", "length": 61431566, "name": "19"}, {"coord_system": "chromosome", "length": 129401213, "name": "8"}, {"coord_system": "chromosome", "name": "14", "length": 124902244}, {"name": "10", "length": 130694993, "coord_system": "chromosome"}, {"length": 104043685, "name": "15", "coord_system": "chromosome"}, {"coord_system": "chromosome", "name": "13", "length": 120421639}, {"coord_system": "chromosome", "name": "16", "length": 98207768}, {"name": "9", "length": 124595110, "coord_system": "chromosome"}, {"name": "3", "length": 160039680, "coord_system": "chromosome"}, {"length": 94987271, "name": "17", "coord_system": "chromosome"}, {"coord_system": "chromosome", "name": "12", "length": 120129022}, {"name": "11", "length": 122082543, "coord_system": "chromosome"}, {"coord_system": "chromosome", "length": 156508116, "name": "4"}, {"name": "2", "length": 182113224, "coord_system": "chromosome"}, {"coord_system": "chromosome", "name": "Y", "length": 91744698}, {"coord_system": "chromosome", "length": 16299, "name": "MT"}]
+
+
+
+
+    /geneSeq:
+         URL requested: http://localhost:8000/geneSeq?gene=FRAT1&json=1
+         Answer:
+                <html platform="win" class="theme-light" dir="ltr"><head><meta http-equiv="Content-Security-Policy" content="default-src 'none' ; script-src resource:; "><link rel="stylesheet" type="text/css" href="resource://devtools-client-jsonview/css/main.css"><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="viewer-config" src="resource://devtools-client-jsonview/viewer-config.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="json-viewer" src="resource://devtools-client-jsonview/json-viewer.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="devtools/client/shared/vendor/react-dom" src="resource://devtools-client-shared/vendor/react-dom.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="devtools/client/shared/react-utils" src="resource://devtools-client-shared/react-utils.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="components/MainTabbedArea" src="resource://devtools-client-jsonview/components/MainTabbedArea.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="devtools/client/shared/components/tree/TreeView" src="resource://devtools-client-shared/components/tree/TreeView.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="devtools/client/shared/vendor/react" src="resource://devtools-client-shared/vendor/react.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="devtools/client/shared/vendor/react-prop-types" src="resource://devtools-client-shared/vendor/react-prop-types.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="components/JsonPanel" src="resource://devtools-client-jsonview/components/JsonPanel.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="components/TextPanel" src="resource://devtools-client-jsonview/components/TextPanel.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="components/HeadersPanel" src="resource://devtools-client-jsonview/components/HeadersPanel.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="devtools/client/shared/components/tabs/Tabs" src="resource://devtools-client-shared/components/tabs/Tabs.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="devtools/client/shared/vendor/react-dom-factories" src="resource://devtools-client-shared/vendor/react-dom-factories.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="components/JsonToolbar" src="resource://devtools-client-jsonview/components/JsonToolbar.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="devtools/client/shared/components/reps/reps" src="resource://devtools-client-shared/components/reps/reps.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="components/TextToolbar" src="resource://devtools-client-jsonview/components/TextToolbar.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="components/LiveText" src="resource://devtools-client-jsonview/components/LiveText.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="components/Headers" src="resource://devtools-client-jsonview/components/Headers.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="components/HeadersToolbar" src="resource://devtools-client-jsonview/components/HeadersToolbar.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="devtools/client/shared/components/tree/ObjectProvider" src="resource://devtools-client-shared/components/tree/ObjectProvider.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="devtools/client/shared/components/tree/TreeRow" src="resource://devtools-client-shared/components/tree/TreeRow.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="devtools/client/shared/components/tree/TreeHeader" src="resource://devtools-client-shared/components/tree/TreeHeader.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="components/SearchBox" src="resource://devtools-client-jsonview/components/SearchBox.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="components/reps/Toolbar" src="resource://devtools-client-jsonview/components/reps/Toolbar.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="devtools/client/shared/vendor/react-redux" src="resource://devtools-client-shared/vendor/react-redux.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="devtools/client/shared/components/tree/TreeCell" src="resource://devtools-client-shared/components/tree/TreeCell.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="devtools/client/shared/components/tree/LabelCell" src="resource://devtools-client-shared/components/tree/LabelCell.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="devtools/client/shared/scroll" src="resource://devtools-client-shared/scroll.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="devtools/client/shared/vendor/redux" src="resource://devtools-client-shared/vendor/redux.js"></script></head><body><div id="content"><div class="tabs "><nav class="tabs-navigation"><ul class="tabs-menu" role="tablist"><li class="tabs-menu-item json " role="presentation"><span class="devtools-tab-line"></span><a id="json-tab" tabindex="-1" title="JSON" aria-controls="json-panel" aria-selected="false" role="tab">JSON</a></li><li class="tabs-menu-item rawdata is-active" role="presentation"><span class="devtools-tab-line"></span><a id="rawdata-tab" tabindex="0" title="Datos sin procesar" aria-controls="rawdata-panel" aria-selected="true" role="tab">Datos sin procesar</a></li><li class="tabs-menu-item headers " role="presentation"><span class="devtools-tab-line"></span><a id="headers-tab" tabindex="-1" title="Cabeceras" aria-controls="headers-panel" aria-selected="false" role="tab">Cabeceras</a></li></ul></nav><div class="panels"><div id="json-panel" style="visibility: hidden; height: 0px;" class="tab-panel-box hidden" role="tabpanel" aria-labelledby="json-tab"></div><div id="rawdata-panel" style="visibility: visible; height: 100%;" class="tab-panel-box" role="tabpanel" aria-labelledby="rawdata-tab"><div class="tab-panel"><div class="textPanelBox tab-panel-inner"><div class="toolbar"><button class="btn save">Guardar</button><button class="btn copy">Copiar</button><button class="btn prettyprint">Adaptar para impresión</button></div><div class="panelContent"><pre class="data">{"seq": "ATTCCGGCTCCCGCGGCTGCAGGCGCGCGGCTAGAGTGCCTGGCGGGCTCCGGCTTCCGCGTCCGCCCCGGCCCCGGTCCAGACTTAGTCTTCAGCTCCGCGCCCGCTCCGCCGCGGCCCACCGCGCCCGCCGGCAGCCGAGCCCCCAGCGACGCCCGCACAGCTCCGGGTGCCCAGACAGGGGGCCATGCCGTGCCGGAGGGAGGAGGAAGAGGAAGCCGGCGAGGAGGCGGAGGGGGAGGAAGAGGAGGAGGACAGCTTCCTCCTACTGCAGCAGTCAGTGGCGCTGGGCAGCTCGGGCGAGGTGGACCGGCTGGTGGCCCAGATCGGCGAGACGCTGCAGCTGGACGCGGCGCAGCACAGCCCGGCCTCGCCGTGCGGGCCCCCGGGGGCGCCGCTGCGGGCCCCGGGGCCCCTGGCTGCGGCGGTGCCGGCGGACAAGGCCAGGTCCCCGGCGGTGCCGCTGCTGCTGCCGCCCGCGTTGGCGGAGACTGTGGGCCCGGCGCCCCCTGGGGTCCTGCGCTGCGCCCTGGGGGACCGCGGCCGCGTGCGGGGCCGCGCTGCGCCCTACTGCGTGGCCGAGCTCGCCACAGGCCCCAGCGCGCTGTCCCCACTGCCCCCTCAGGCCGACCTTGATGGGCCTCCGGGAGCTGGCAAGCAGGGCATCCCGCAGCCGCTGTCGGGTCCGTGCCGGCGAGGATGGCTCCGGGGCGCCGCCGCCTCCCGCCGCCTGCAGCAGCGACGCGGGTCCCAACCAGAAACCCGCACAGGCGACGACGACCCGCACCGGCTTCTGCAGCAGCTAGTGCTCTCTGGAAACCTCATCAAGGAGGCCGTGCGAAGGCTTCATTCGCGACGGCTGCAGTTACGTGCAAAGCTTCCCCAACGCCCGCTCCTGGGACCTCTGTCGGCCCCGGTGCATGAACCCCCTTCGCCTCGCAGCCCTCGCGCGGCCTGCAGTGACCCTGGCGCCTCCGGGAGGGCGCAGCTCAGAACTGGCGACGGCGTTCTTGTGCCTGGCAGCTAACACGCCCGGGGTGGCCACAGCGCCAGCCTCAGACTGGAGGGCAAGGGGTTCCCTTGAGGGCTGCAGTTCTACTCAGGCTGGTGGAGAACTCTGGCTTTTGGAAGCGAGAGTAAAAAGCTAATGACGAGGAACCGAAAAATCGCGAGTGTTTCGCGGGTAACTGGGGTTGAGGGCCAAAATATTTGGAATGAAGGACTTTGGCCCTATTTAAGGCAGATTTTACAGAGCGCACCTCAAACGTACAAGTCAGTAGGACTCCTTATTTGGCGTGACCCGACCTGGCCGCGGAGCCTGCATTTCCTCGCAGCCTCTCAGTGCCCTCCAGCCCCGCGACCATGTGGCCACAATCCACGCTTCTCCGGATCGCGGTGCGCCGGAACCACGGAGGATGATGCCAGTTACTTGCTTTACCTTTTCAGGGCTGGCTCCTGATCCACTTTGGGGGAGGAGAACATGAGTAGATAATTTCAGGGTGCAGCCCAATCTGCCAGACTTAAAAAAACCATCTTGTGTCTTTGGAGGTGCTGCTTAATACCAAACATGCGGTGCCATGAAGGGACCCTTTGGGGGTTGAATAGGAGTTAACCCCTGCGCTCTCTTTGCAACTGTCTCTCTTCTCAGAGTGGTGGGGGAAGGCTGTACGACACGGGTGGGGAAAGGAGGTGGGGGCGGGGAGTATTGAATGGTGGTGGAAGGGTAGAGAGGCGCGGAGTGAACCCCACGCCCTGTCTAAAGTGTATTTTCAGAGCCGGCCCGCCTCTCCTCGGTTCAAGGTCACTGTTTCCTGGGCACGCACTGGGTTGCGGGACAGAGTAGCCAGGTTCTGCCGGTGCTCGGAGAAGAGCGCAGTGTTTTGCAAGTGCTGGAGTCTCCTGAGGACACGCGCGTCGCCGCCACCGCGGGTGTGGGAAAGCGCGGACGTGCTGGGCGGCTGTGCTTCGGTAGGCGACCACCGCCCCTGGCCGCGCTCCGGGCTTTCACGGAAACTCCCGAGACCGGGCCCTGGGTTCCTCCTCTCCTACTCGGCTCTGCAGTCCTACTCAAGCGGGTGGCTCTGGGATCCTGGGGGCCTGGGTTGGGGGCTAGGGAGACGCCATGTGATGGACACTCCAGGGACACACAGCCTAGCACAGCAGCTTATAATGGGCTCTCCGGGGCCATTTGCAATAACAGCTGCAATTCCCTGGATAGACGAGTTGATTTCCTCCCTCTGCCCCTCCCCCAGCCATGCCAGCTGGCCTTTGTAAGTGCAGGAAACCGAGTAGAAAATGTGACCCTCCAAATGGAGAAGCTGCAGGCTTTGCCATTGTGAACCATGGTGAAGTGCTTGGAACATACTGTTCACTCACTCTAAAGGCGCTGAGACTGTGCTGTTGTTCTCGTTTTTATAGTCAATGGCTTGTTCATCATCCAGATGTGGCTACTGACATATCTACACTTCGCACCGGAGTGTCTGGAATTGTGGCTATCCTGATTATAGGATTTTAACTTAACTGAAATGCCTGCTTTGAATAAATGTGTTGGGTTTTTTGTTTGGTTTTATTTTATACTTGCCATCAGTGAAAAAGATGTACAGAACACATTTCTCTGATCTCCATAAACATGAAAACACTTGAAATCTC"}</pre></div></div></div></div><div id="headers-panel" style="visibility: hidden; height: 0px;" class="tab-panel-box hidden" role="tabpanel" aria-labelledby="headers-tab"></div></div></div></div><script src="resource://devtools-client-jsonview/lib/require.js" data-main="resource://devtools-client-jsonview/viewer-config.js"></script></body></html>
+
+
+
+    /geneInfo:
+        URL requested: http://localhost:8000/geneInfo?gene=FRAT1&json=1
+        Answer:
+                <pre class="data">{"start": 97319267, "end": 97321915, "identify": "ENSG00000165879", "length": 2648, "chromo": "10"}</pre>
+
+
+    /geneCal:
+        URL requested: http://localhost:8000/geneCal?gene=FRAT1&json=1
+        Answer:
+                <pre class="data">{"percA": 18.0, "percC": 30.2, "percG": 32.0, "percT": 19.7, "total_length": 2649}</pre>
+
+
+    /geneList:
+        URL requested: http://localhost:8000/geneList?chromo=1&start=0&end=30000&json=1
+        Answer:
+                <pre class="data">["DDX11L1 11869 14409", "WASH7P 14404 29570", "MIR6859-1 17369 17436", "MIR1302-2HG 29554 31109"]</pre>8
+
+
+
